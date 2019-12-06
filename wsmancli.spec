@@ -1,11 +1,11 @@
 Name:           wsmancli
 Version:        2.6.0
-Release:        1
-Summary:        Command line interface of Web Services for Management (WS-MAN).
+Release:        9
+Summary:        Command line interface of open wsman.
 License:        BSD
 Url:            http://www.openwsman.org/
 
-Source:         wsmancli-%{version}.tar.gz
+Source:         %{name}-%{version}.tar.gz
 Source1:        COPYING
 Source2:        README
 Source3:        AUTHORS
@@ -17,19 +17,19 @@ Requires:       openwsman curl
 
 %description
 Web Services for Management (WS-MAN) is a specification for managing computer systems using web services standards.
-This project is an open source implementation of WS-MAN; enabling the in-band management of Linux/uni* platforms.
+Open wsman is an open source implementation of WS-MAN; enabling the in-band management of Linux/uni* platforms.
 
 %prep
-%autosetup -n wsmancli-%{version} -p1
+%autosetup -n %{name}-%{version} -p1
 cp -fp %SOURCE1 %SOURCE2 %SOURCE3 .;
 
 %build
 ./bootstrap
 %configure --disable-more-warnings 
-make %{?_smp_flags}
+%make_build
 
 %install
-make DESTDIR=%{buildroot} install
+%make_install
 
 %package_help
 
@@ -44,5 +44,5 @@ make DESTDIR=%{buildroot} install
 %doc README AUTHORS
 
 %changelog
-* Sat Nov 30 2019 openEuler Buildteam <buildteam@openeuler.org> - 2.6.0-1
+* Sat Nov 30 2019 jiaxiya<jiaxiyajiaxiya@163.com> - 2.6.0-9
 - Package init
