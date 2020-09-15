@@ -1,11 +1,11 @@
 Name:           wsmancli
 Version:        2.6.0
-Release:        9
+Release:        10
 Summary:        Command line interface of open wsman.
 License:        BSD
 Url:            http://www.openwsman.org/
 
-Source:         %{name}-%{version}.tar.gz
+Source:         https://github.com/Openwsman/wsmancli/archive/v%{version}.tar.gz
 Source1:        COPYING
 Source2:        README
 Source3:        AUTHORS
@@ -44,5 +44,8 @@ cp -fp %SOURCE1 %SOURCE2 %SOURCE3 .;
 %doc README AUTHORS
 
 %changelog
+* Mon Sep 14 2020 Ge Wang<wangge20@huawei.com> - 2.6.0-10
+- Modify Source0 Url
+
 * Sat Nov 30 2019 jiaxiya<jiaxiyajiaxiya@163.com> - 2.6.0-9
 - Package init
